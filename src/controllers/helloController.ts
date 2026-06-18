@@ -1,9 +1,9 @@
-import { Request, Response } from 'express';
+import { Router } from 'express';
 
-export const helloWorld = (req: Request, res: Response) => {
+const router = Router();
 
-  res.json({
-    message: 'Hello World 🚀'
-  });
+router.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-};
+export { router as helloWorld };
